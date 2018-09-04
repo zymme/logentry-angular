@@ -1,0 +1,32 @@
+<div class="jumbotron">
+  <h1 class="display-4">Hello!</h1>
+  <p class="lead">This is a simple log entry web app, simply record the activity you did to keep track of your progress!</p>
+  <hr class="my-4">
+  <div class="btn-group" dropdown>
+    <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
+      What would you like to do? <span class="caret"></span>
+    </button>
+    <ul *dropdownMenu class="dropdown-menu" role="menu">
+      <li role="menuitem"><a class="dropdown-item" [routerLink]="['/createentry']">Create Entry</a></li>
+      <li role="menuitem"><a class="dropdown-item" [routerLink]="['/viewentries']">View Entries</a></li>
+    </ul>
+  </div>
+</div>
+<!-- <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">What would you like to do? </h5>
+    <h6 class="card-subtitle mb-2 text-muted"></h6>
+    <p class="card-text">Click below to choose what you would like to do next!</p>
+  </div>
+</div>
+<div class="card" style="width: 18rem;">
+  <div class="btn-group" dropdown>
+    <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
+      What would you like to do? <span class="caret"></span>
+    </button>
+    <ul *dropdownMenu class="dropdown-menu" role="menu">
+      <li role="menuitem"><a class="dropdown-item" [routerLink]="['/createentry']">Create Entry</a></li>
+      <li role="menuitem"><a class="dropdown-item" [routerLink]="['/viewentries']">View Entries</a></li>
+    </ul>
+  </div>
+</div> -->
