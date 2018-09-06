@@ -5,18 +5,22 @@
   <div class="panel-body">
     <div class='form-group'>
         <label>Title of Activity</label>
-        <input type="text" class='form-control' id='messageto'>          
+        <input type="text" class='form-control' id='activity' [(ngModel)]='activity'>          
     </div>
    <div class='form-group'>
      <label>Duration</label>
-     <input type="text" class="form-control" id='duration' placeholder="example: 32 mins 44 secs">
+     <input type="text" class="form-control" id='duration' [(ngModel)]='duration' placeholder="example: 32 mins 44 secs">
    </div>
     <div class='form-group'>
       <label>Notes</label>
-      <textarea class="form-control" rows="3"></textarea>
+      <textarea class="form-control" rows="3" [(ngModel)]='notes' ></textarea>
+    </div>
+    <div class="form-group">
+      <label>User</label>
+      <input type="text" class="form-control" id='user' [(ngModel)]='user' placeholder="Your name 'be unique!'">
     </div>
     <div class='form-group'>
-        <button class="btn btn-primary">Record Activity</button>
+        <button class="btn btn-primary" (click)='createLogEntry()'>Record Activity</button>
     </div>
   </div>
 </div>

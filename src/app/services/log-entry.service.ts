@@ -10,6 +10,7 @@ import { throwError } from "rxjs";
 
 import { HttpErrorResponse } from "@angular/common/http/src/response";
 import { ILogEntry } from '../logentry/ILogEntry';
+import { Entry } from '../logentry/ILogEntry';
 
 @Injectable({
   providedIn: 'root'
@@ -22,14 +23,19 @@ export class LogEntryService {
 
   }
 
-  createLogEntry(logentry: ILogEntry) : Observable<ILogEntry> {
+  createLogEntry(inlogentry: ILogEntry) : Observable<ILogEntry> {
 
     try {
-      console.log(`Entered createLogEntry with ${logentry}`);
+
+      var _logentry = <Entry> {
+        logentry: inlogentry
+      };
+
+      console.log(`Entered createLogEntry with ${JSON.stringify(_logentry)}`);
       
-      return this._http.post<ILogEntry>(this._entryApi, logentry)
+      return this._http.post<ILogEntry>(this._entryApi, _logentry)
         .pipe( 
-          tap(resp => console.log(JSON.stringify(resp))
+          tap(resp => console.log(`returned from api ${JSON.stringify(resp)}`)
         ), 
         catchError(this.handleError)
     );
