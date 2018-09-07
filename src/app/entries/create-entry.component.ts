@@ -24,7 +24,6 @@ export class CreateEntryComponent implements OnInit {
     return this._activity;
   }
   set activity(value: string) {
-    console.log(`value of activity is ${value}`);
     this._activity = value;
   }
 
