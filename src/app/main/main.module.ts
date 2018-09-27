@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { AuthGuard } from '../auth/auth.guard';
 
 
 @NgModule({
@@ -13,7 +14,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
     FormsModule,
     BsDropdownModule,
     RouterModule.forChild([
-      { path: 'main', component: MainComponent }
+      { path: 'main', component: MainComponent, canActivate: [AuthGuard] }
     ])
   ],
   declarations: [
@@ -22,6 +23,9 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
   exports: [
     CommonModule,
     FormsModule
+  ],
+  providers: [ 
+    AuthGuard
   ]
 })
 export class MainModule { }

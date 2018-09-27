@@ -11,19 +11,20 @@ import { MainModule } from './main/main.module';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { EntriesModule } from './entries/entries.module';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { MainComponent } from './main/main.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeComponent,
-    
+        
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     OAuthModule.forRoot(),
     RouterModule.forRoot([
-      { path: 'welcome', component: WelcomeComponent }, 
+      { path: 'welcome', component: WelcomeComponent },       
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
       { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
     ]),

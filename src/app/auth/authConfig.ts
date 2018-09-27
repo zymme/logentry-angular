@@ -9,7 +9,7 @@ export const authConfig: AuthConfig = {
     redirectUri: "http://localhost:4200/",
 
     // SPA's id (SPA = Service Provider )
-    clientId: "js-logentry",
+    clientId: "js-mylog",
 
     // set the scope for the permissions the client should request
     // The first three are defined by OIDC. The 4th is a usecase-specific one
