@@ -5,6 +5,7 @@ import { authConfig } from './auth/authConfig';
 import { Router } from '@angular/router';
 import { PLATFORM_ID } from '@angular/core';
 import { isPlatformServer, isPlatformBrowser } from '@angular/common';
+import { AuthenticationService } from './services/authentication.service';
 
 @Component({
   selector: 'app-root',
@@ -12,11 +13,11 @@ import { isPlatformServer, isPlatformBrowser } from '@angular/common';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'My Run Log';
+  title = 'My Log Entry';
 
   constructor(private oauthService: OAuthService, 
     private router: Router, 
-    @Inject(PLATFORM_ID) private platformId: Object ) {
+    @Inject(PLATFORM_ID) private platformId: Object, private _authService: AuthenticationService ) {
 
     console.log('In app component ctor...');
 
@@ -29,10 +30,8 @@ export class AppComponent {
   }
 
   ngOnInit() {
-    console.log('In ngOnInit() ...');
-
-
+    console.log('In appngOnInit() ...');
+   
   }
-
 
 }

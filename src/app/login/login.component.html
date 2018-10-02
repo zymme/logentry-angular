@@ -1,0 +1,21 @@
+<div *ngIf='loggedIn'>
+    <div class="alert alert-success" role="alert">
+  
+        <h4 class="alert-heading">You are logged In!</h4>
+        <p>Please click below if you would like to log out.</p>  
+      </div>
+      <div>
+        <a class="btn btn-warning" (click)='logOut()'>Log Out</a>
+      </div>
+</div>
+<div *ngIf='!loggedIn'>
+    <div class="alert alert-primary" role="alert">
+  
+        <h4 class="alert-heading">You are not logged In</h4>
+        <p>Please click below to login to the application.</p>  
+      </div>
+      <div>
+        <a class="btn btn-warning" (click)='logIn()'>Log In</a>
+      </div>
+</div>
+

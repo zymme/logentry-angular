@@ -6,13 +6,16 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { LogEntryService } from '../services/log-entry.service';
+import { AuthGuard } from '../auth/auth.guard';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { TokenInterceptorService } from '../services/token-interceptor.service';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     RouterModule.forChild([
-      { path: 'createentry', component: CreateEntryComponent }
+      { path: 'createentry', component: CreateEntryComponent, canActivate: [AuthGuard] }
     ])
   ],
   declarations: [CreateEntryComponent],
@@ -21,7 +24,9 @@ import { LogEntryService } from '../services/log-entry.service';
     FormsModule
   ],
   providers: [
-    LogEntryService
+    LogEntryService,
+    AuthGuard, 
+     
   ]
 })
 export class EntriesModule { }

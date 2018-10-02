@@ -6,6 +6,8 @@ import { RouterModule } from '@angular/router';
 
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { AuthGuard } from '../auth/auth.guard';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { TokenInterceptorService } from '../services/token-interceptor.service';
 
 
 @NgModule({

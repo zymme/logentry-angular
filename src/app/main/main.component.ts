@@ -9,30 +9,32 @@ import { forEach } from '@angular/router/src/utils/collection';
 })
 export class MainComponent implements OnInit {
 
+  private _name: string;
   
   constructor(private _oauthService: OAuthService) { 
 
     console.log("Inside MainComponent ctor...");
 
-    var token = this._oauthService.getAccessToken();
-    console.log(`token: ${token}`);
-
-    debugger;
-
-    var claims = this._oauthService.getIdentityClaims();
-    console.log(`claims for this user: ${claims}`);
-
-    let arr = [];
-
-    for(let k in claims)
-    {
-      console.log(k);
-      console.log(claims[k]);
+    if(localStorage.getItem('user')) {
+      this._name = localStorage.getItem('user');
     }
+
+    // var token = this._oauthService.getAccessToken();
+    
+    // var userInfo = this._oauthService.getIdentityClaims();
+
+    // for(let u in userInfo)
+    // {
+    //   console.log(`${u} : ${userInfo[u]}`);
+    // }
 
   }
 
   ngOnInit() {
+  }
+
+  public get name() {
+    return this._name;
   }
 
 }

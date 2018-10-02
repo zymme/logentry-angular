@@ -12,11 +12,13 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { EntriesModule } from './entries/entries.module';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { MainComponent } from './main/main.component';
+import { LoginModule } from './login/login.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeComponent,
+    
         
   ],
   imports: [
@@ -31,6 +33,7 @@ import { MainComponent } from './main/main.component';
     BsDropdownModule.forRoot(),
     MainModule,
     EntriesModule,
+    LoginModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
