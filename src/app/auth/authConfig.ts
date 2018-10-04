@@ -15,6 +15,8 @@ export const authConfig: AuthConfig = {
 
     logoutUrl: "http://localhost:4200/login",
 
+    postLogoutRedirectUri: "http://localhost:4200/login",
+
         
     // set the scope for the permissions the client should request
     // The first three are defined by OIDC. The 4th is a usecase-specific one
