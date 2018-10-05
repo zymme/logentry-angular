@@ -29,6 +29,7 @@ export class AuthenticationService {
   public checkAuthToken() : void {
 
     console.log("Inside checkAuthToken() ...");
+    console.log(this._oauthService.getAccessToken());
 
     if(this._oauthService.hasValidAccessToken()) {
 
@@ -40,7 +41,8 @@ export class AuthenticationService {
 
     } 
     else {
-      
+      console.log("in else condition of hasValidAccessToken ");
+
     }
     
 

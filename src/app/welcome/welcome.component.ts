@@ -19,15 +19,8 @@ export class WelcomeComponent implements OnInit {
 
     console.log('inside ngOnInit() WelcomeComponent ... ');
 
-    // if(this._oauthService.hasValidAccessToken()) {
-
-    //   console.log("has valid token...");
-    //   var claims = this._oauthService.getIdentityClaims();
-    //   console.log(`User is ${claims['givenname']}`);
-
-    //   localStorage.setItem('user', claims['givenname']);
-
-    // }
+    this._authService.checkAuthToken();
+    
   }
 
 }

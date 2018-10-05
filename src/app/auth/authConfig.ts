@@ -6,16 +6,14 @@ export const authConfig: AuthConfig = {
     issuer: "http://localhost:5000",
 
     // url to redirect to after login
-    redirectUri: "http://localhost:4200/login",
+    redirectUri: "http://localhost:4200/",
 
     // SPA's id (SPA = Service Provider )
     clientId: "js-mylog",
 
     responseType: "id_token token",
 
-    logoutUrl: "http://localhost:4200/login",
-
-    postLogoutRedirectUri: "http://localhost:4200/login",
+    postLogoutRedirectUri: "http://localhost:4200/welcome",
 
         
     // set the scope for the permissions the client should request

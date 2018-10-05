@@ -18,16 +18,7 @@ export class MainComponent implements OnInit {
     if(localStorage.getItem('user')) {
       this._name = localStorage.getItem('user');
     }
-
-    // var token = this._oauthService.getAccessToken();
-    
-    // var userInfo = this._oauthService.getIdentityClaims();
-
-    // for(let u in userInfo)
-    // {
-    //   console.log(`${u} : ${userInfo[u]}`);
-    // }
-
+   
   }
 
   ngOnInit() {

@@ -13,11 +13,13 @@ import { EntriesModule } from './entries/entries.module';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { MainComponent } from './main/main.component';
 import { LoginModule } from './login/login.module';
+import { CallbackComponentComponent } from './callback-component/callback-component.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeComponent,
+    CallbackComponentComponent,
     
         
   ],
@@ -27,8 +29,8 @@ import { LoginModule } from './login/login.module';
     OAuthModule.forRoot(),
     RouterModule.forRoot([
       { path: 'welcome', component: WelcomeComponent },       
-      { path: '', redirectTo: 'welcome', pathMatch: 'full' },
-      { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
+      { path: '', component: CallbackComponentComponent, pathMatch: 'full' },
+      { path: '**', redirectTo: '' }
     ]),
     BsDropdownModule.forRoot(),
     MainModule,
